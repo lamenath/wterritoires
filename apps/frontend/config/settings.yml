@@ -1,0 +1,59 @@
+#   wTerritoires <http://www.wterritoires.fr/>
+#   Copyright (C) 2010 Simon Lamellière <opensource@worketer.fr>
+#
+#   This program is free software: you can redistribute it and/or modify
+#   it under the terms of the GNU Affero General Public License as
+#   published by the Free Software Foundation, either version 3 of the
+#   License, or (at your option) any later version.
+
+prod:
+  .settings:
+    no_script_name:         true
+    logging_enabled:        false
+    cache:                  false
+
+dev:
+  .settings:
+    error_reporting:        <?php echo (E_ALL | E_STRICT)."\n" ?>
+    web_debug:              true
+    cache:                  false
+    no_script_name:         false
+    etag:                   false
+
+test:
+  .settings:
+    error_reporting:        <?php echo ((E_ALL | E_STRICT) ^ E_NOTICE)."\n" ?>
+    cache:                  false
+    web_debug:              false
+    no_script_name:         false
+    etag:                   false
+    
+default:
+  .settings:
+    timeout:     1800
+ 
+cache:
+  .settings:
+    error_reporting: <?php echo (E_ALL | E_STRICT)."\n" ?>
+    web_debug:       true
+    cache:           true
+    etag:            false
+    
+all:
+  .settings:
+    default_culture:        fr
+    # Form security secret (CSRF protection)
+    csrf_secret:            4877e0495dbff26f5a5ae3fd183080d66816841b
+
+    # Output escaping settings
+    escaping_strategy:      true
+    escaping_method:        ESC_SPECIALCHARS
+
+    # Enable the database manager
+    use_database:           true
+    charset:                utf-8
+    i18n:                   on
+    
+    standard_helpers: [ Partial, Cache, I18N, Date, Number ]
+
+    jquery_core:      jquery.min.js

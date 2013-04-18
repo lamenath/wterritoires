@@ -1,0 +1,11 @@
+menus:
+  profile_edit:
+    use_proute: true
+    sf_route: 
+      name: "@profileedit"
+      params: []
+    tree:
+      general: Mon profil
+      relations: Intérêts
+      structures: Structures
+      privacy: Confidentialité

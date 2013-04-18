@@ -1,0 +1,26 @@
+#   wTerritoires <http://www.wterritoires.fr/>
+#   Copyright (C) 2013 Simon Lamellière <opensource@worketer.fr>
+#
+#   This program is free software: you can redistribute it and/or modify
+#   it under the terms of the GNU Affero General Public License as
+#   published by the Free Software Foundation, either version 3 of the
+#   License, or (at your option) any later version.
+#
+#   Fichier de personalisation
+
+default:
+  http_metas:
+    content-type: text/html
+      
+  metas:
+    title:        Réseau Rural Régional de Picardie
+    keywords:     reseau, rural, picardie, europe, feader, rrr, régional
+    language:     fr
+    robots:       index, follow
+
+  stylesheets:    [new.css, tipsy.css, boxy.css, scrolls.css, iphone-tick.css, human.css, shadowbox.css, flexigrid.pack.css, custom-theme/jquery-ui-1.8.16.custom.css, "https://fonts.googleapis.com/css?family=Droid+Sans:regular,bold&v1"]
+
+  javascripts:    [jquery.js, jscroll.js, flexigrid.pack.js, tiny_mce/jquery.tinymce.js,  shadowbox.js, human.js, iphone-style-checkboxes.js, jquery.elastic.source.js, jcarousel.js, new.js, pack.scrollbars.js, jquery-forms.js, jquery.boxy.js, jquery.tipsy.js, grow.js, jquery-tools.js, jquery.length.js, jquery-ui-1.8.16.custom.min.js, jw_player/jwplayer.js, jw_player/swfobject.js, 'http://maps.googleapis.com/maps/api/js?sensor=true']
+
+  has_layout:     true
+  layout:         default

@@ -1,0 +1,23 @@
+menus:
+  event_profile:
+    use_display: mini
+    use_proute: true
+    sf_route: 
+      name: "@event_act"
+      params: 
+        slug: slug
+    tree:
+      activity: Actualité
+      presentation: Infos pratiques
+      guests: Participants ({%count_total})
+      ressources: Ressources ({%count_ressources})
+      ideas: Forum ({%count_ideas})
+  event_page:
+    use_proute: true
+    sf_route: 
+      name: "@event_page"
+      params: 
+        slug: slug
+    tree:
+      all: Publiques
+      mine: Personnels

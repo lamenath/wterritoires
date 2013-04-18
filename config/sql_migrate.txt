@@ -1,0 +1,4 @@
+update profil_profil set created_at=date;
+update ressource set created_at=date;
+update profil_projet set created_at = date;
+update invitation set created_at=date;

@@ -1,0 +1,22 @@
+CREATE TABLE event (id BIGINT AUTO_INCREMENT, createur_id BIGINT, titre VARCHAR(255) NOT NULL, description LONGTEXT, photo VARCHAR(255), contacts LONGTEXT, lieu VARCHAR(255), adresse LONGTEXT, ville VARCHAR(255), start_at DATETIME, end_at DATETIME, visibilite VARCHAR(255) DEFAULT 'public', INDEX start_at_idx (start_at), INDEX end_at_idx (end_at), INDEX visibilite_idx (visibilite), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = INNODB;
+CREATE TABLE event_invite (id BIGINT AUTO_INCREMENT, event_id BIGINT, profil_id BIGINT, etat VARCHAR(255), INDEX etat_idx (etat), PRIMARY KEY(id, event_id, profil_id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = INNODB;
+CREATE TABLE event_structure (id BIGINT AUTO_INCREMENT, event_id BIGINT, structure_id BIGINT, type VARCHAR(255), INDEX type_idx (type), PRIMARY KEY(id, event_id, structure_id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = INNODB;
+CREATE TABLE groupe (id BIGINT AUTO_INCREMENT, profil_id BIGINT, titre VARCHAR(255) NOT NULL, description VARCHAR(255), photo VARCHAR(255), INDEX profil_id_idx (profil_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = INNODB;
+CREATE TABLE groupe_filiere (id BIGINT AUTO_INCREMENT, groupe_id BIGINT, filiere_id BIGINT, PRIMARY KEY(id, groupe_id, filiere_id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = INNODB;
+CREATE TABLE groupe_theme (id BIGINT AUTO_INCREMENT, groupe_id BIGINT, theme_id BIGINT, PRIMARY KEY(id, groupe_id, theme_id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = INNODB;
+CREATE TABLE profil_groupe (id BIGINT AUTO_INCREMENT, profil_id BIGINT, groupe_id BIGINT, role VARCHAR(255), date DATETIME, INDEX date_idx (date), INDEX role_idx (role), PRIMARY KEY(id, profil_id, groupe_id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = INNODB;
+CREATE TABLE projet_groupe (id BIGINT AUTO_INCREMENT, projet_id BIGINT, groupe_id BIGINT, PRIMARY KEY(id, projet_id, groupe_id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = INNODB;
+
+ALTER TABLE  `projet_idee` ADD  `groupe_id` INT NOT NULL AFTER  `projet_id` ,
+ADD INDEX (  `groupe_id` );
+
+ALTER TABLE  `projet_idee` CHANGE  `groupe_id`  `groupe_id` BIGINT NOT NULL;
+
+ALTER TABLE  `ressource` ADD  `groupe_id` BIGINT( 20 ) NOT NULL AFTER  `projet_id` ,
+ADD INDEX (  `groupe_id` );
+
+ALTER TABLE  `ressource` CHANGE  `groupe_id`  `groupe_id` BIGINT( 20 ) NULL;
+
+ALTER TABLE  `ressource` ADD  `event_id` BIGINT( 20 ) NULL AFTER  `groupe_id` ,
+ADD INDEX (  `event_id` );
+

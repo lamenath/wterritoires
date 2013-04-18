@@ -1,0 +1,983 @@
+#   wTerritoires <http://www.wterritoires.fr/>
+#   Copyright (C) 2010 Simon Lamellière <opensource@worketer.fr>
+#
+#   This program is free software: you can redistribute it and/or modify
+#   it under the terms of the GNU Affero General Public License as
+#   published by the Free Software Foundation, either version 3 of the
+#   License, or (at your option) any later version.
+
+options:
+  collate: utf8_unicode_ci
+  charset: utf8
+
+sfGuardGroupUtf8:
+  inheritance:  { extends: sfGuardGroup, type: simple }
+  options:      { collate: utf8_unicode_ci, charset: utf8 }
+
+sfGuardGroupPermissionUtf8:
+  inheritance:  { extends: sfGuardGroupPermission, type: simple }
+  options:      { collate: utf8_unicode_ci, charset: utf8 }
+
+sfGuardPermissionUtf8:
+  inheritance:  { extends: sfGuardPermission, type: simple }
+  options:      { collate: utf8_unicode_ci, charset: utf8 }
+
+sfGuardRememberKeyUtf8:
+  inheritance:  { extends: sfGuardRememberKey, type: simple }
+  options:      { collate: utf8_unicode_ci, charset: utf8 }
+
+sfGuardUserUtf8:
+  inheritance:  { extends: sfGuardUser, type: simple }
+  options:      { collate: utf8_unicode_ci, charset: utf8 }
+
+sfGuardUserGroupUtf8:
+  inheritance:  { extends: sfGuardUserGroup, type: simple }
+  options:      { collate: utf8_unicode_ci, charset: utf8 }
+
+sfGuardUserPermissionUtf8:
+  inheritance:  { extends: sfGuardUserPermission, type: simple }
+  options:      { collate: utf8_unicode_ci, charset: utf8 }
+
+MailMessage:
+ actAs: { Timestampable: ~ }
+ columns:
+   message: { type: clob, notnull: true }
+   
+HomeNews:
+  actAs:
+    Timestampable:  ~
+  columns:
+    photo:        { type: string(255), notnull: true }
+    titre:        { type: string(100), notnull: true }
+    text:         { type: clob, notnull: true }
+    titre_lien:   { type: string(20), notnull: true }
+
+Profil:
+  indexes:
+    created_at:          { fields: [created_at] }
+    updated_at:          { fields: [updated_at] }
+    is_public:           { fields: [is_public] }     
+    latitude:            { fields: [latitude] }
+    longitude:           { fields: [longitude] } 
+    prenom:              { fields: [prenom] }
+    nom:                 { fields: [nom] }
+  actAs:
+    Sluggable: { fields: [login], uniqueBy: [login, email] }
+    Geolocatable: { fields: [ville, code_postal] }
+    Timestampable:  ~
+  columns:
+    nom:  	  	{ type: string(255), notnull: true }
+    prenom:     { type: string(255), notnull: true }
+    adresse:       { type: string(255) }
+    ville:       { type: string(255), notnull: true }
+    code_postal:       { type: string(10), notnull: true }
+    email:      { type: string(255), notnull: true, unique: true }
+    presentation:   { type: clob }
+    login:      { type: string(25), notnull: true, unique: true }
+    password:   { type: string(100), notnull: true }
+    photo:      { type: string(255) }
+    photo_crop:      { type: string(255) }
+    privacy_type:  { type: enum, values: [private, public, friends], default: public }
+    notify_comment: { type: boolean, notnull: true, default: 1 }
+    notify_new_item: { type: boolean, notnull: true, default: 1 }
+    relance_count: { type: integer(11), default: 0 }
+    is_activated: { type: boolean, notnull: true, default: 0 }
+    is_public: { type: boolean, notnull: true, default: 0 }
+    is_admin: { type: boolean, notnull: true, default: 0 }
+    last_login: { type: timestamp }
+  relations:
+    Metier:
+      class: Metier
+      refClass: ProfilMetier
+    Projet:
+      class: Projet
+      refClass: ProfilProjet
+    Theme:
+      class: Theme
+      refClass: ProfilTheme
+    Competence:
+      class: Competence
+      refClass: ProfilCompetence
+    CompetenceRecherche:
+      class: Competence
+      refClass: ProfilCompetenceRecherche
+    Filiere:
+      class: Filiere
+      refClass: ProfilFiliere
+    Expertise:
+      class: Expertise
+      refClass: ProfilExpertise
+    Structure:
+      class: Structure
+      refClass: ProfilStructure
+
+Mailing:
+  indexes:
+    created_at:          { fields: [created_at] }
+    updated_at:          { fields: [updated_at] }
+  actAs:
+    Timestampable:  ~
+  columns:
+    sujet:       { type: string(255), notnull: true }
+    message:     { type: clob, notnull: true }
+    is_sent:     { type: boolean, default: false }
+  relations:
+    Filiere:
+      class: Filiere
+      refClass: MailingFiliere
+
+MailingFiliere:
+  actAs:
+    Timestampable:  ~
+  columns:
+    id: {  type: integer,  primary: true, autoincrement: true }
+    filiere_id:  { type: integer }
+    mailing_id: { type: integer }
+  relations:
+    Filiere: { onDelete: CASCADE, local: filiere_id, foreign: id } 
+    Mailing: { onDelete: CASCADE, local: mailing_id, foreign: id }
+
+ActionPassword:
+  actAs:
+    Timestampable:  ~
+  indexes:
+    ticket:          { fields: [ticket] }
+    date:           { fields: [date] }
+  columns:
+    id: {  type: integer,  primary: true, autoincrement: true }
+    profil_id:   { type: integer }
+    ticket: { type: string(255) }
+    date: { type: timestamp }
+  relations:
+    Profil: { onDelete: CASCADE, local: profil_id, foreign: id, class: Profil }
+
+Historique:
+  actAs:
+    Timestampable:  ~
+  indexes:
+    type:           { fields: [type] }
+    date:           { fields: [date] }
+  columns:
+    id: {  type: integer,  primary: true, autoincrement: true }
+    profil_id:   { type: integer }
+    type: { type: enum, values: [profil, projet, structure, document] }
+    query: { type: string(255) }
+    date: { type: timestamp }
+  relations:
+    Profil: { onDelete: CASCADE, local: profil_id, foreign: id, class: Profil } 
+    
+Consultation:
+  actAs:
+    Timestampable:  ~
+  indexes:
+    type_id:          { fields: [type_id] }
+    date:             { fields: [date] }
+  columns:
+    id: {  type: integer,  primary: true, autoincrement: true }
+    doc_id:  {  type: integer }
+    type_id:   { type: enum, values: [profil, projet] }
+    ip_source:   { type: string(255) }
+    visiteur_id: {  type: integer }
+    date: { type: timestamp }
+  relations:
+    Profil: { onDelete: CASCADE, local: visiteur_id, foreign: id } 
+
+WishInvitation:
+  actAs:
+    Timestampable:  ~
+  indexes:
+    hidden:           { fields: [hidden] }
+  columns:
+    id: {  type: integer,  primary: true, autoincrement: true }
+    profil_id: { type: integer }
+    projet_id: { type: integer }
+    hidden: { type: boolean, default: 0, notnull: true }
+  relations:
+    Profil: { onDelete: CASCADE, local: profil_id, foreign: id } 
+    Projet: { onDelete: CASCADE, local: projet_id, foreign: id } 
+
+Invitation:
+  actAs:
+    Timestampable:  ~
+  indexes:
+    date:           { fields: [date] }
+    hidden:           { fields: [hidden] }
+  columns:
+    id: {  type: integer,  primary: true, autoincrement: true }
+    profil_id: { type: integer }
+    projet_id: { type: integer }
+    event_id:  { type: integer }
+    inviteur_id: { type: integer }
+    story_id:    { type: integer }
+    date: { type: timestamp }
+    hidden: { type: boolean, notnull: false }
+  relations:
+    Profil: { onDelete: CASCADE, local: profil_id, foreign: id } 
+    Projet: { onDelete: CASCADE, local: projet_id, foreign: id } 
+    Event:  { onDelete: CASCADE, local: event_id, foreign: id }
+    Story:  { onDelete: SET NULL, local: story_id, foreign: id }
+    Inviteur: { onDelete: CASCADE, local: inviteur_id, foreign: id, class: Profil } 
+
+InvitationEmail:
+  actAs:
+    Timestampable:  ~
+  indexes:
+    email:          { fields: [email] }
+    date:           { fields: [date] }
+  columns:
+    id: {  type: integer,  primary: true, autoincrement: true }
+    email: { type: string(255) }
+    projet_id: { type: integer }
+    event_id:  { type: integer }
+    inviteur_id: { type: integer }
+    date: { type: timestamp }
+  relations:
+    Projet: { onDelete: CASCADE, local: projet_id, foreign: id } 
+    Inviteur: { onDelete: CASCADE, local: inviteur_id, foreign: id, class: Profil } 
+    Event:  { onDelete: CASCADE, local: event_id, foreign: id }
+    
+Stats:
+  actAs:
+    Timestampable:  ~
+  indexes:
+    type:          { fields: [type] }
+    created_at:    { fields: [created_at] }
+  columns:
+    id: { type: integer,  primary: true, autoincrement: true }
+    type: { type: string(255)  }    
+    total: { type: integer }
+
+ProfilProfil:
+  actAs:
+    Timestampable:  ~
+  indexes:
+    date:                  { fields: [date] }
+    is_activated:          { fields: [is_activated] }
+  columns:
+    id: {  type: integer,  primary: true, autoincrement: true }
+    profil_id:  { type: integer, primary: true }
+    contact_id: { type: integer, primary: true }
+    story_id:   { type: integer, notnull: false }
+    is_activated: { type: integer, notnull: true, default: 0 }
+    date: { type: timestamp }
+  relations:
+    Story:  { onDelete: SET NULL, local: story_id, foreign: id, class: Story }
+    Profil: { onDelete: CASCADE, local: profil_id, foreign: id } 
+    Contact: { onDelete: CASCADE, local: contact_id, foreign: id, class: Profil }
+
+ProfilMetier:
+  actAs:
+    Timestampable:  ~
+  columns:
+    id: {  type: integer,  primary: true, autoincrement: true }
+    profil_id:  { type: integer, primary: true }
+    metier_id: { type: integer, primary: true }
+  relations:
+    Profil: { onDelete: CASCADE, local: profil_id, foreign: id } 
+    Metier: { onDelete: CASCADE, local: metier_id, foreign: id }
+    #ProjetMetier: { foreignAlias: ProjetMetier, local: metier_id }
+    
+ProfilProjet:
+  actAs:
+    Timestampable:  ~
+  indexes:
+    date:          { fields: [date] }
+    role:          { fields: [role] }
+  columns:
+    id: {  type: integer,  primary: true, autoincrement: true }
+    profil_id:  { type: integer, primary: true }
+    projet_id: { type: integer, primary: true }
+    role:      { type: enum, values: [referent, contributeur, observateur], default: observateur }
+    date: { type: timestamp }
+  relations:
+    Profil: { onDelete: CASCADE, local: profil_id, foreign: id } 
+    Projet: { onDelete: CASCADE, local: projet_id, foreign: id }
+    
+ProfilStructure:
+  actAs:
+    Timestampable:  ~
+  indexes:
+    role:          { fields: [role] }
+  columns:
+    id: {  type: integer,  primary: true, autoincrement: true }
+    profil_id:  { type: integer, primary: true }
+    structure_id: { type: integer, primary: true }
+    role:      { type: enum, values: [referent, membre] }
+  relations:
+    Profil: { onDelete: CASCADE, local: profil_id, foreign: id } 
+    Structure: { onDelete: CASCADE, local: structure_id, foreign: id }
+    
+ProfilTheme:
+  actAs:
+    Timestampable:  ~
+  columns:
+    id: {  type: integer,  primary: true, autoincrement: true }
+    profil_id:  { type: integer, primary: true }
+    theme_id: { type: integer, primary: true }
+  relations:
+    Profil: { onDelete: CASCADE, local: profil_id, foreign: id } 
+    Theme: { onDelete: CASCADE, local: theme_id, foreign: id }
+    
+ProfilFiliere:
+  actAs:
+    Timestampable:  ~
+  columns:
+    id: {  type: integer,  primary: true, autoincrement: true }
+    profil_id:  { type: integer, primary: true }
+    filiere_id: { type: integer, primary: true }
+  relations:
+    Profil: { onDelete: CASCADE, local: profil_id, foreign: id } 
+    Filiere: { onDelete: CASCADE, local: filiere_id, foreign: id }
+    #ProjetFiliere: { foreignAlias: ProjetFiliere, local: filiere_id }
+    
+ProfilCompetence:
+  actAs:
+    Timestampable:  ~
+  columns:
+    id: {  type: integer,  primary: true, autoincrement: true }
+    profil_id:  { type: integer, primary: true }
+    competence_id: { type: integer, primary: true }
+  relations:
+    Profil: { onDelete: CASCADE, local: profil_id, foreign: id } 
+    Competence: { onDelete: CASCADE, local: competence_id, foreign: id }
+    #ProjetCompetence: { foreignAlias: ProjetCompetence, local: competence_id }
+
+ProfilCompetenceRecherche:
+  actAs:
+    Timestampable:  ~
+  columns:
+    id: {  type: integer,  primary: true, autoincrement: true }
+    profil_id:  { type: integer, primary: true }
+    competence_id: { type: integer, primary: true }
+  relations:
+    Profil: { onDelete: CASCADE, local: profil_id, foreign: id } 
+    Competence: { onDelete: CASCADE, local: competence_id, foreign: id }
+    
+ProfilExpertise:
+  actAs:
+    Timestampable:  ~
+  columns:
+    id: {  type: integer,  primary: true, autoincrement: true }
+    profil_id:  { type: integer, primary: true }
+    expertise_id: { type: integer, primary: true }
+  relations:
+    Profil: { onDelete: CASCADE, local: profil_id, foreign: id } 
+    Expertise: { onDelete: CASCADE, local: expertise_id, foreign: id }
+    
+PhotoProjet:
+  indexes:
+    date:          { fields: [date] }
+  actAs:
+    Timestampable:  ~
+    Sluggable: { fields: [nom] }
+  columns:
+    createur_id: { type: integer }
+    projet_id:   { type: integer }
+    event_id:    { type: integer }
+    nom:       { type: string(255), notnull: true }
+    fichier:    { type: string(255), notnull: true }
+    date:    { type: timestamp }
+  relations:
+    Profil: { onDelete: CASCADE, local: createur_id, foreign: id }
+    Projet: { onDelete: CASCADE, local: projet_id, foreign: id }
+    Event: { onDelete: CASCADE, local: event_id, foreign: id } 
+
+Story:
+  indexes: 
+    object_id:  { fields: [object_id] }
+    object_model:  { fields: [object_model] }
+    relation_id:  { fields: [relation_id] }
+    relation_model:  { fields: [relation_model] }
+    type:  { fields: [type] }
+  actAs:
+    Timestampable:  ~
+  columns:
+    profil_id:      { type: integer,  notnull: true  }
+    object_id:      { type: integer }
+    object_model:   { type: string(25) }
+    relation_id:      { type: integer }
+    relation_model:   { type: string(25) }
+    story_i18n:     { type: string(255), notnull: true }
+    type:           { type: string(25), notnull: true }
+    url:            { type: string(255) }
+    params:         { type: clob }
+  relations:
+    Profil:         { onDelete: CASCADE, local: profil_id, foreign: id }
+    Buddies:
+      class: Profil
+      refClass: StoryBuddies
+
+StoryBuddies:
+  actAs:
+    Timestampable:  ~
+  columns:
+    story_id:       { type: integer, notnull: true }
+    profil_id:      { type: integer, notnull: true  }
+  relations:
+    Story:          { onDelete: CASCADE, local: story_id, foreign: id }
+    Profil:         { onDelete: CASCADE, local: profil_id, foreign: id }
+
+StoryPictures:
+  actAs:
+    Timestampable:  ~
+  columns:
+    story_id:       { type: integer, notnull: true }
+    photo_id:       { type: integer, notnull: true  }
+  relations:
+    Story:          { onDelete: CASCADE, local: story_id, foreign: id }
+    PhotoProjet:    { onDelete: CASCADE, local: photo_id, foreign: id }
+     
+Ressource:
+  indexes:
+    date:          { fields: [date] }
+  actAs:
+    Timestampable:  ~
+    Sluggable: { fields: [nom] }
+  columns:
+    createur_id: { type: integer }
+    story_id:    { type: integer, notnull: false }
+    projet_id:   { type: integer }
+    event_id:    { type: integer }
+    nom:         { type: string(255), notnull: true }
+    resume:      { type: clob }
+    fichier:     { type: string(255) }
+    video:       { type: string(30) }
+    source:      { type: string(255), notnull: true }
+    date:        { type: timestamp }
+  relations:
+    Profil: { onDelete: CASCADE, local: createur_id, foreign: id }
+    Projet: { onDelete: CASCADE, local: projet_id, foreign: id }
+    Event:  { onDelete: CASCADE, local: event_id, foreign: id }
+    Story:  { onDelete: SET NULL, local: story_id, foreign: id, class: Story }
+    Filiere:
+      class: Filiere
+      refClass: RessourceFiliere
+    Theme:
+      class: Theme
+      refClass: RessourceTheme
+
+RessourceFiliere:
+  actAs:
+    Timestampable:  ~
+  columns:
+    id: {  type: integer,  primary: true, autoincrement: true }
+    ressource_id:  { type: integer, primary: true }
+    filiere_id: { type: integer, primary: true }
+  relations:
+    Ressource: { onDelete: CASCADE, local: ressource_id, foreign: id } 
+    Filiere: { onDelete: CASCADE, local: filiere_id, foreign: id }
+    
+RessourceTheme:
+  actAs:
+    Timestampable:  ~
+  columns:
+    id: {  type: integer,  primary: true, autoincrement: true }
+    ressource_id:  { type: integer, primary: true }
+    theme_id: { type: integer, primary: true }
+  relations:
+    Ressource: { onDelete: CASCADE, local: ressource_id, foreign: id } 
+    Theme: { onDelete: CASCADE, local: theme_id, foreign: id }
+    
+Event:
+  actAs:
+    Timestampable:  ~
+    Sluggable:      { fields: [titre] }
+    Geolocatable: { fields: [lieu, adresse, ville] }
+  indexes:
+    start_at:    { fields: [start_at] }
+    end_at:      { fields: [end_at] }
+    visibilite:  { fields: [visibilite] }
+    latitude:    { fields: [latitude] }
+    longitude:   { fields: [longitude] }
+    titre:       { fields: [titre] }
+  columns:
+    createur_id: { type: integer }
+    story_id:    { type: integer, notnull: false }
+    titre:       { type: string(255), notnull: true }
+    description: { type: clob }
+    photo:       { type: string(255) }
+    contacts:    { type: clob }
+    lieu:        { type: string(255) }
+    adresse:     { type: clob }
+    ville:       { type: string(255) }
+    start_at:    { type: timestamp }
+    end_at:      { type: timestamp }
+    visibilite:  { type: enum, values: [public, private], default: public }
+  relations:
+    Story:  { onDelete: SET NULL, local: story_id, foreign: id, class: Story }
+    Structure:
+      class: Structure
+      refClass: EventStructure
+    Invite:
+      class: Profil
+      refClass: EventInvite
+    Admin:
+      class: Profil
+      refClass: EventAdmin
+    Metier:
+      class: Metier
+      refClass: EventMetier
+    Filiere:
+      class: Filiere
+      refClass: EventFiliere
+    Theme:
+      class: Theme
+      refClass: EventTheme
+    Competence:
+      class: Competence
+      refClass: EventCompetence
+
+EventFiliere:
+  actAs:
+    Timestampable:  ~
+  columns:
+    id: {  type: integer,  primary: true, autoincrement: true }
+    event_id:  { type: integer, primary: true }
+    filiere_id: { type: integer, primary: true }
+  relations:
+    Event: { onDelete: CASCADE, local: event_id, foreign: id } 
+    Filiere: { onDelete: CASCADE, local: filiere_id, foreign: id }
+    
+EventTheme:
+  actAs:
+    Timestampable:  ~
+  columns:
+    id: {  type: integer,  primary: true, autoincrement: true }
+    event_id:  { type: integer, primary: true }
+    theme_id: { type: integer, primary: true }
+  relations:
+    Event: { onDelete: CASCADE, local: event_id, foreign: id } 
+    Theme: { onDelete: CASCADE, local: theme_id, foreign: id }
+    
+EventCompetence:
+  actAs:
+    Timestampable:  ~
+  columns:
+    id: {  type: integer,  primary: true, autoincrement: true }
+    event_id:  { type: integer, primary: true }
+    competence_id: { type: integer, primary: true }
+  relations:
+    Event: { onDelete: CASCADE, local: event_id, foreign: id } 
+    Competence: { onDelete: CASCADE, local: competence_id, foreign: id }
+    
+EventMetier:
+  actAs:
+    Timestampable:  ~
+  columns:
+    id: {  type: integer,  primary: true, autoincrement: true }
+    event_id:  { type: integer, primary: true }
+    metier_id: { type: integer, primary: true }
+  relations:
+    Event: { onDelete: CASCADE, local: event_id, foreign: id } 
+    Metier: { onDelete: CASCADE, local: metier_id, foreign: id }
+    
+EventStructure:
+  actAs:
+    Timestampable:  ~
+  indexes:
+    type:       { fields: [type] }
+  columns:
+    id:         { type: integer,  primary: true, autoincrement: true }
+    event_id:   { type: integer, primary: true }
+    structure_id:  { type: integer, primary: true }
+    type:       { type: enum, values: [referent, partenaire] }
+  relations:
+    Event:      { onDelete: CASCADE, local: event_id, foreign: id } 
+    Structure:  { onDelete: CASCADE, local: structure_id, foreign: id }
+
+EventAdmin:
+  actAs:
+    Timestampable:  ~
+  columns:
+    id:         { type: integer,  primary: true, autoincrement: true }
+    event_id:   { type: integer, primary: true }
+    profil_id:  { type: integer, primary: true }
+  relations:
+    Event:      { onDelete: CASCADE, local: event_id, foreign: id } 
+    Profil:     { onDelete: CASCADE, local: profil_id, foreign: id }
+
+EventInvite:
+  actAs:
+    Timestampable:  ~
+  indexes:
+    etat:       { fields: [etat] }
+  columns:
+    id:         { type: integer,  primary: true, autoincrement: true }
+    event_id:   { type: integer, primary: true }
+    profil_id:  { type: integer, primary: true }
+    etat:       { type: enum, values: [referent, pending, yes, no] }
+  relations:
+    Event:      { onDelete: CASCADE, local: event_id, foreign: id } 
+    Profil:     { onDelete: CASCADE, local: profil_id, foreign: id }
+
+Structure:
+  actAs:
+    Sluggable: { fields: [nom] }
+    Timestampable:  ~
+    Geolocatable: { fields: [adresse, ville, code_postal] }
+  columns:
+    createur_id: { type: integer }
+    nom:       { type: string(255), notnull: true }
+    adresse:       { type: string(255) }
+    adresse2:       { type: string(255) }
+    ville:       { type: string(255), notnull: true }
+    code_postal:       { type: string(10), notnull: true }
+    code_insee:     { type: string(10) }
+    tel:       { type: string(15) }
+    mail:       { type: string(150) }
+    photo:  { type: string(255) }
+    photo_crop:      { type: string(255) }
+    presentation: { type: clob }
+    missions: { type: clob }
+    but: { type: clob }
+    strategie: { type: clob }
+    url: { type: string(255) }
+  relations:
+    Profil: { onDelete: CASCADE, local: createur_id, foreign: id } 
+    Metier:
+      class: Metier
+      refClass: StructureMetier
+    Theme:
+      class: Theme
+      refClass: StructureTheme
+    Competence:
+      class: Competence
+      refClass: StructureCompetence
+    Filiere:
+      class: Filiere
+      refClass: StructureFiliere
+
+StructureTheme:
+  actAs:
+    Timestampable:  ~
+  columns:
+    id: {  type: integer,  primary: true, autoincrement: true }
+    structure_id:  { type: integer, primary: true }
+    theme_id: { type: integer, primary: true }
+  relations:
+    Structure: { onDelete: CASCADE, local: structure_id, foreign: id } 
+    Theme: { onDelete: CASCADE, local: theme_id, foreign: id }
+    
+StructureFiliere:
+  actAs:
+    Timestampable:  ~
+  columns:
+    id: {  type: integer,  primary: true, autoincrement: true }
+    structure_id:  { type: integer, primary: true }
+    filiere_id: { type: integer, primary: true }
+  relations:
+    Structure: { onDelete: CASCADE, local: structure_id, foreign: id } 
+    Filiere: { onDelete: CASCADE, local: filiere_id, foreign: id }
+    
+StructureCompetence:
+  actAs:
+    Timestampable:  ~
+  columns:
+    id: {  type: integer,  primary: true, autoincrement: true }
+    structure_id:  { type: integer, primary: true }
+    competence_id: { type: integer, primary: true }
+  relations:
+    Structure: { onDelete: CASCADE, local: structure_id, foreign: id } 
+    Competence: { onDelete: CASCADE, local: competence_id, foreign: id }
+
+StructureMetier:
+  actAs:
+    Timestampable:  ~
+  columns:
+    id: {  type: integer,  primary: true, autoincrement: true }
+    structure_id:  { type: integer, primary: true }
+    metier_id: { type: integer, primary: true }
+  relations:
+    Structure: { onDelete: CASCADE, local: structure_id, foreign: id } 
+    Metier: { onDelete: CASCADE, local: metier_id, foreign: id }
+              
+Commune:
+  indexes:   
+    latitude:            { fields: [latitude] }
+    longitude:           { fields: [longitude] } 
+  actAs:
+    Sluggable: { fields: [nom] }
+    Geolocatable: { fields: [code_postal, nom] }
+  columns:
+    pays_id:    { type: integer }
+    nom:       { type: string(255), notnull: true }
+    description:       { type: clob }
+    photo:       { type: string(255) }
+    code_postal:       { type: string(10), notnull: true }
+    code_insee:     { type: string(10) }
+  relations:
+    Pays: { onDelete: CASCADE, local: pays_id, foreign: id } 
+
+Pays: 
+  actAs:
+    Sluggable: { fields: [nom] }
+  columns:
+    nom:       { type: string(255), notnull: true, unique: true }
+    description:       { type: clob }
+    photo:       { type: string(255) }
+    
+StructureContact:
+  actAs:
+    Timestampable:  ~
+  columns:
+    structure_id: { type: integer }
+    profil_id: { type: integer }
+    civilite:  { type: enum, values: [m, melle, mme], default: m }
+    nom:       { type: string(255), notnull: true }
+    prenom:    { type: string(255), notnull: true }
+    fonction:  { type: string(255) }
+    mail:       { type: string(150) }
+    phone:      { type: string(20)}
+    requalif: { type: boolean, notnull: true, default: 0 }
+  relations:
+    Structure: { onDelete: CASCADE, local: structure_id, foreign: id } 
+    Profil: { onDelete: CASCADE, local: profil_id, foreign: id }
+
+Feedback:
+  actAs:
+    Timestampable:  ~
+  columns:
+    profil_id: { type: integer }
+    status:  { type: enum, values: [new, acknowledged, prod], default: new }
+    titre:       { type: string(255), notnull: true }
+    message:     { type: clob }
+  relations:
+    Profil: { onDelete: CASCADE, local: profil_id, foreign: id, class: Profil }
+    
+ProjetIdee:
+  actAs:
+    Timestampable:  ~
+  columns:
+    profil_id: { type: integer, notnull: true }
+    projet_id: { type: integer }
+    event_id: { type: integer }
+    story_id:  { type: integer, notnull: false }
+    status:  { type: enum, values: [new, acknowledged, prod], default: new }
+    titre:       { type: string(255), notnull: true }
+    message:     { type: clob }
+  relations:
+    Profil: { onDelete: CASCADE, local: profil_id, foreign: id, class: Profil }
+    Projet: { onDelete: CASCADE, local: projet_id, foreign: id, class: Projet }
+    Event: { onDelete: CASCADE, local: event_id, foreign: id, class: Event }
+    Story:  { onDelete: SET NULL, local: story_id, foreign: id, class: Story }
+    
+Commentaire:
+  actAs:
+    Timestampable:  ~
+  columns:
+    profil_id: { type: integer }
+    story_id:  { type: integer, notnull: false }
+    content_id: { type: integer }
+    content_type:  { type: string(255), notnull: true }
+    message:     { type: clob }
+  relations:
+    Profil:  { onDelete: CASCADE, local: profil_id, foreign: id, class: Profil }
+    Story:   { onDelete: SET NULL, local: story_id, foreign: id, class: Story }
+    
+CommentaireVote:
+  actAs:
+    Timestampable:  ~
+  columns:
+    profil_id: { type: integer }
+    story_id:  { type: integer, notnull: false }
+    content_id: { type: integer }
+    content_type:  { type: string(255), notnull: true }
+  relations:
+    Profil: { onDelete: CASCADE, local: profil_id, foreign: id, class: Profil }
+    Story:  { onDelete: SET NULL, local: story_id, foreign: id, class: Story }
+    
+Projet:
+  indexes:
+    date_debut:          { fields: [date_debut] }
+    date_echeance:       { fields: [date_echeance] }
+    created_at:          { fields: [created_at] }
+    type:                { fields: [type] }
+  actAs:
+    Timestampable:  ~
+    Sluggable: { fields: [nom], unique: [nom] }
+  columns:
+    createur_id: { type: integer }
+    story_id:    { type: integer, notnull: false }
+    commune_id: { type: integer }
+    type:       { type: enum, values: [public, group], default: public }
+    nom:       { type: string(255), notnull: true, unique: true }
+    action:      { type: enum, values: [regional, territorial, local, ultralocal] }
+    url:       { type: string(255), notnull: false }
+    photo:       { type: string(255) }
+    photo_crop:      { type: string(255) }
+    objectifs_qualitatif:   { type: clob }
+    objectifs_quantitatif:  { type: clob }
+    strategie:       { type: clob }
+    resultats: { type: clob }
+    besoins: { type: clob }
+    lecons: { type: clob }
+    avancement: { type: integer(3) }
+    date_debut: { type: timestamp, notnull: false }
+    date_echeance: { type: timestamp, notnull: false }
+  relations:
+    Profil: { onDelete: CASCADE, local: createur_id, foreign: id }
+    Commune: { onDelete: CASCADE, local: commune_id, foreign: id }
+    Story:   { onDelete: SET NULL, local: story_id, foreign: id, class: Story }
+    Metier:
+      class: Metier
+      refClass: ProjetMetier
+    Structure:
+      class: Structure
+      refClass: ProjetStructure
+    StructurePartenaire:
+      class: Structure
+      refClass: ProjetStructurePartenaire
+    Filiere:
+      class: Filiere
+      refClass: ProjetFiliere
+    Theme:
+      class: Theme
+      refClass: ProjetTheme
+    Competence:
+      class: Competence
+      refClass: ProjetCompetence
+
+ProjetStructure:
+  actAs:
+    Timestampable:  ~
+  columns:
+    id: {  type: integer,  primary: true, autoincrement: true }
+    projet_id:  { type: integer, primary: true }
+    structure_id: { type: integer, primary: true }
+  relations:
+    Projet: { onDelete: CASCADE, local: projet_id, foreign: id } 
+    Structure: { onDelete: CASCADE, local: structure_id, foreign: id }
+    
+ProjetStructurePartenaire:
+  actAs:
+    Timestampable:  ~
+  columns:
+    id: {  type: integer,  primary: true, autoincrement: true }
+    projet_id:  { type: integer, primary: true }
+    structure_id: { type: integer, primary: true }
+  relations:
+    Projet: { onDelete: CASCADE, local: projet_id, foreign: id } 
+    Structure: { onDelete: CASCADE, local: structure_id, foreign: id }
+    
+ProjetFiliere:
+  actAs:
+    Timestampable:  ~
+  columns:
+    id: {  type: integer,  primary: true, autoincrement: true }
+    projet_id:  { type: integer, primary: true }
+    filiere_id: { type: integer, primary: true }
+  relations:
+    Projet: { onDelete: CASCADE, local: projet_id, foreign: id } 
+    Filiere: { onDelete: CASCADE, local: filiere_id, foreign: id }
+    #ProfilFiliere: { foreignAlias: ProfilFiliere, local: filiere_id }
+    
+ProjetTheme:
+  actAs:
+    Timestampable:  ~
+  columns:
+    id: {  type: integer,  primary: true, autoincrement: true }
+    projet_id:  { type: integer, primary: true }
+    theme_id: { type: integer, primary: true }
+  relations:
+    Projet: { onDelete: CASCADE, local: projet_id, foreign: id } 
+    Theme: { onDelete: CASCADE, local: theme_id, foreign: id }
+    
+ProjetCompetence:
+  actAs:
+    Timestampable:  ~
+  columns:
+    id: {  type: integer,  primary: true, autoincrement: true }
+    projet_id:  { type: integer, primary: true }
+    competence_id: { type: integer, primary: true }
+  relations:
+    Projet: { onDelete: CASCADE, local: projet_id, foreign: id } 
+    Competence: { onDelete: CASCADE, local: competence_id, foreign: id }
+    #ProfilCompetence: { foreignAlias: ProfilCompetence, local: competence_id }
+    
+ProjetMetier:
+  actAs:
+    Timestampable:  ~
+  columns:
+    id: {  type: integer,  primary: true, autoincrement: true }
+    projet_id:  { type: integer, primary: true }
+    metier_id: { type: integer, primary: true }
+  relations:
+    Projet: { onDelete: CASCADE, local: projet_id, foreign: id } 
+    Metier: { onDelete: CASCADE, local: metier_id, foreign: id }
+    #ProfilMetier: { foreignAlias: ProfilMetier, local: metier_id }
+    
+Messagerie:
+  actAs:
+    Timestampable:  ~
+  indexes:
+    is_deleted:          { fields: [is_deleted_sender] }
+    is_deleted2:         { fields: [is_deleted_receiver] }
+    is_sent:             { fields: [is_sent] }
+    created_at:          { fields: [created_at] }
+  columns:
+    id: {  type: integer,  primary: true, autoincrement: true }
+    profil_id:  { type: integer }
+    sender_id: { type: integer }
+    sujet:      { type: string(150), notnull: true }
+    message:   { type: clob }
+    seen_at: { type: timestamp }
+    is_sent: { type: boolean, notnull: true, default: 0 }
+    is_deleted_sender: { type: boolean, notnull: true, default: 0 }
+    is_deleted_receiver: { type: boolean, notnull: true, default: 0 }
+  relations:
+    Profil: { onDelete: CASCADE, local: profil_id, foreign: id }
+    Sender: { onDelete: CASCADE, local: sender_id, foreign: id, class: Profil } 
+    
+Competence:
+  indexes:
+    is_activated:          { fields: [is_activated] }
+  actAs:
+    Timestampable:  ~
+    Sluggable: { fields: [nom] }
+  columns: 
+    nom:  { type: string(255), notnull: true, unique: true }
+    description: { type: clob }
+    is_activated: { type: boolean, notnull: true, default: 0 }
+    
+Theme:
+  indexes:
+    is_activated:          { fields: [is_activated] }
+  actAs:
+    Timestampable:  ~
+    Sluggable: { fields: [nom] }
+  columns: 
+    nom:  { type: string(255), notnull: true, unique: true }
+    description: { type: clob }
+    is_activated: { type: boolean, notnull: true, default: 0 }
+    
+Filiere:
+  indexes:
+    is_activated:          { fields: [is_activated] }
+  actAs:
+    Timestampable:  ~
+    Sluggable: { fields: [nom] }
+  columns: 
+    nom:  { type: string(255), notnull: true, unique: true }
+    description: { type: clob }
+    is_activated: { type: boolean, notnull: true, default: 0 }
+    
+Expertise:
+  actAs:
+    Timestampable:  ~
+    Sluggable: { fields: [nom] }
+  columns: 
+    nom:  { type: string(255), notnull: true }
+    description: { type: clob }
+
+Metier:
+  indexes:
+    is_activated:          { fields: [is_activated] }
+  actAs:
+    Timestampable:  ~
+    Sluggable: { fields: [nom] }
+    Taggable: 
+      templates: [Taggable]
+  columns: 
+    nom:  { type: string(255), notnull: true, unique: true }
+    description: { type: clob }
+    is_activated: { type: boolean, notnull: true, default: 0 }

@@ -1,0 +1,13 @@
+menus:
+  dash:
+    use_proute: true
+    sf_route: 
+      name: "@dashc"
+      params: []
+    tree:
+     # segments: Segments
+     # edit: Nouveau Segment
+      tendances: Tendances
+      variations: Variations
+      mailings: Mailings
+      mailing: Nouveau Mailing

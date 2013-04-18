@@ -1,0 +1,44 @@
+#   wTerritoires <http://www.wterritoires.fr/>
+#   Copyright (C) 2011 Simon Lamellière <opensource@worketer.fr>
+#
+#   This program is free software: you can redistribute it and/or modify
+#   it under the terms of the GNU Affero General Public License as
+#   published by the Free Software Foundation, either version 3 of the
+#   License, or (at your option) any later version.
+#
+#   Fichier de personalisation
+
+dev: 
+  force_email: slamelliere@worketer.fr
+  
+all:
+  google_anal: UA-18654201-1
+  mailer: hello.wktnet.com
+  enable_mailer: true
+  url: http://www.reseau-rural-picardie.eu/
+  gps_center_default: "49.887557,2.296143"
+  
+  # Filer
+  cdn_full: /uploads/
+ 
+  # Automatic Emails configuration
+  email: ne_pas_repondre@reseau-rural-picardie.eu
+  support: support@reseau-rural-picardie.eu
+  email_name: Réseau Rural Picardie
+  email_logo: images/new/bmp_logo_rrp_email.png
+  email_header: Réseau Rural Régional de Picardie
+  email_signature_1: Pierre-Marie Lamellière
+  email_signature_2: Animateur réseau rural Picardie
+  email_signature_contact: contact@reseau-rural-picardie.eu
+    
+  mail_server: hello.wktnet.com
+  ssl_enabled: false
+  title_page: Réseau Rural Picardie
+  # Réseau Rural Régional...
+  rrr_complete: de Picardie
+  .array:
+    memcache:
+      servers:
+        server_01:
+          host: localhost
+          port: 11211

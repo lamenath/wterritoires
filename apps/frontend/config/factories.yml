@@ -1,0 +1,127 @@
+#   wTerritoires <http://www.wterritoires.fr/>
+#   Copyright (C) 2010 Simon Lamellière <opensource@worketer.fr>
+#
+#   This program is free software: you can redistribute it and/or modify
+#   it under the terms of the GNU Affero General Public License as
+#   published by the Free Software Foundation, either version 3 of the
+#   License, or (at your option) any later version.
+
+dev:
+  routing:
+    class: sfPatternRouting
+    param:
+      generate_shortest_url:            true
+      extra_parameters_as_query_string: true
+  view_cache:
+    class: sfFileCache
+  mailer:
+    class: sfMailer
+    param:
+      transport:
+        class: Swift_SmtpTransport
+        param:
+          host:       barbara.worketer.com
+          port:       25
+          encryption: ~
+          username:   ~
+          password:   ~
+          prod:
+          
+  logger:
+    class:   sfNoLogger
+    param:
+      level:   err
+      loggers: ~
+ 
+  routing:
+    class: sfPatternRouting
+    param:
+      generate_shortest_url:            true
+      extra_parameters_as_query_string: true
+      cache:
+        class: sfFileCache
+        param:
+          automatic_cleaning_factor: 0
+          cache_dir:                 %SF_CONFIG_CACHE_DIR%/routing
+          lifetime:                  31556926
+          prefix:                    %SF_APP_DIR%/routing
+
+  view_cache:
+    class: sfFileCache
+    param:
+      automaticCleaningFactor: 0
+      cacheDir:                %SF_TEMPLATE_CACHE_DIR%
+
+  i18n:
+    param:
+      cache:
+        class: sfFileCache
+        param:
+          automatic_cleaning_factor: 0
+          cache_dir:                 %SF_I18N_CACHE_DIR%
+          lifetime:                  31556926
+          prefix:                    %SF_APP_DIR%/i18n
+          
+all:
+  user:
+    class: myUser
+    param:
+      timeout: false # jms
+      default_culture: fr
+      use_flash:       on
+      
+  view_cache:
+    class: sfFileCache
+    param:
+      automatic_cleaning_factor: 0
+      cache_dir:                 %SF_TEMPLATE_CACHE_DIR%
+      lifetime:                  86400
+      prefix:                    %SF_APP_DIR%/template
+
+  routing:
+    class: sfPatternRouting
+    param:
+      cache: ~
+
+  i18n:
+    class: sfI18N
+    param:
+      cache:
+        class: sfFileCache
+        param:
+          automatic_cleaning_factor: 0
+          cache_dir:                 %SF_I18N_CACHE_DIR%
+          lifetime:                  31556926
+          prefix:                    %SF_APP_DIR%/i18n
+
+  mailer:
+    class: sfMailer
+    param:
+      logging:           %SF_LOGGING_ENABLED%
+      charset:           %SF_CHARSET%
+      delivery_strategy: spool
+      spool_class:       Swift_DoctrineSpool
+      spool_arguments:   [ MailMessage, message ]
+      transport:
+        class: Swift_SmtpTransport
+        param:
+          host:       localhost
+          port:       25
+          encryption: ~
+          username:   ~
+          password:   ~
+  storage:
+    class: sfCacheSessionStorage
+    param:
+      session_name:  worketer #[required] name of session to use
+      session_cookie_path: / #[required] cookie path
+      session_cookie_lifetime: +10 days #[required] liftime of cookie
+      session_cookie_secure: false #[required] send only if secure connection
+      session_cookie_http_only: true #[required] accessible only via http protocol
+      cache: 
+        class: sfMemcacheCache #[required] define the cache strategy
+        param:
+          servers: # Array of servers
+            localserver:
+              host: localhost # hostname or IP of mamcache server
+              port: 11211

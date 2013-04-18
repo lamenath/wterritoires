@@ -1,0 +1,2 @@
+<?php $ressource = Doctrine_Query::create()->from("Ressource")->where("id=?", $item["extraData"]["object_id"])->fetchOne(array(), Doctrine::HYDRATE_ARRAY); ?>
+<h3><?php echo __("<a href='%url'>%name</a> a publié la ressource '%ress'", array("%ress" => $ressource["nom"], "%url" => $item["url"], "%name" => $item["full_name"])); ?></h3>

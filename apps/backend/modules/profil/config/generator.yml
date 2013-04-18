@@ -1,0 +1,46 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Profil
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          profil
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:
+       _edit:  { label: Editer }
+       _delete: { label: Supprimer }
+       _new: { label: Nouveau profil }
+      fields:
+        is_public: { label: Profil public ? }
+        is_activated: { label: Profil activé ? }    
+        Tags:
+          type:       doctrine_admin_check_list
+          params:     through_class=ProfilMetier
+      list:
+        title:         Liste des profils
+        display: [nom, prenom, ville, created_at]
+      filter:
+        display: [nom, prenom, ville, code_postal, email, login, is_activated, is_public, created_at]
+      form:    ~
+      edit:
+        title:    Editer le profil "%%nom%%"
+        display: 
+          Général: [is_activated, nom, prenom, presentation, photo]
+          Connexion: [is_admin, password]
+          Géolocalisation: [adresse, ville, code_postal]
+          Confidentialité: [is_public]
+          Relations: [metier_list, theme_list, competence_list, filiere_list, structure_list, projet_list]
+      new:
+       title:    Ajouter un profil
+       display: 
+          Général: [ created_at, is_activated, nom, prenom, email, presentation, photo]
+          Connexion: [is_admin, login, password]
+          Géolocalisation: [adresse, ville, code_postal, latitude, longitude]
+          Confidentialité: [is_public]
+          Relations: [metier_list, theme_list, competence_list, filiere_list, structure_list, projet_list]

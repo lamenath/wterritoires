@@ -1,0 +1,15 @@
+menus:
+  directory:
+    use_proute: true
+    sf_route: 
+      name: "@directory_act"
+      params: 
+        slug: slug
+        type: type
+    tree:
+      project: Projets
+      user: Membres
+      event: Evénements
+      structure: Structures
+      ressources: Ressources
+      map: Carte

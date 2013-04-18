@@ -1,0 +1,124 @@
+home_news:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                HomeNews
+    module:               home_news
+    prefix_path:          /home_news
+    column:               id
+    with_wildcard_routes: true
+
+structure_contact:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                StructureContact
+    module:               structure_contact
+    prefix_path:          /structure_contact
+    column:               id
+    with_wildcard_routes: true
+
+pays:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Pays
+    module:               pays
+    prefix_path:          /pays
+    column:               id
+    with_wildcard_routes: true
+
+commune:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Commune
+    module:               commune
+    prefix_path:          /commune
+    column:               id
+    with_wildcard_routes: true
+
+projet:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Projet
+    module:               projet
+    prefix_path:          /projet
+    column:               id
+    with_wildcard_routes: true
+
+expertise:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Expertise
+    module:               expertise
+    prefix_path:          /expertise
+    column:               id
+    with_wildcard_routes: true
+
+competence:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Competence
+    module:               competence
+    prefix_path:          /competence
+    column:               id
+    with_wildcard_routes: true
+
+theme:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Theme
+    module:               theme
+    prefix_path:          /theme
+    column:               id
+    with_wildcard_routes: true
+
+filiere:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Filiere
+    module:               filiere
+    prefix_path:          /filiere
+    column:               id
+    with_wildcard_routes: true
+
+metier:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Metier
+    module:               metier
+    prefix_path:          /metier
+    column:               id
+    with_wildcard_routes: true
+
+structure:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Structure
+    module:               structure
+    prefix_path:          /structure
+    column:               id
+    with_wildcard_routes: true
+
+profil:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Profil
+    module:               profil
+    prefix_path:          /profil
+    column:               id
+    with_wildcard_routes: true
+
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# default rules
+homepage:
+  url:   /
+  param: { module: default, action: index }
+
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

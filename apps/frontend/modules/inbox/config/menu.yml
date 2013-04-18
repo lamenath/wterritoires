@@ -1,0 +1,9 @@
+menus:
+  inbox_page:
+    use_proute: true
+    sf_route: 
+      name: "@inboxc"
+      params: []
+    tree:
+      in: Reçus
+      out: Envoyés

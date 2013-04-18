@@ -1,0 +1,1349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+  <file source-language="fr" target-language="en" datatype="plaintext" original="messages" date="2011-11-02T01:52:16Z" product-name="messages">
+    <header/>
+    <body>
+      <trans-unit id="1">
+        <source>chargement..</source>
+        <target>Required.</target>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>Projets</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="3">
+        <source>Contacts</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="4">
+        <source>Messages</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="5">
+        <source>FAQ</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="6">
+        <source>Blog</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="7">
+        <source>Acteurs</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="8">
+        <source>Observateurs</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="9">
+        <source>Se Connecter</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="10">
+        <source>Inscription</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="11">
+        <source>Le Blog</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="12">
+        <source>Voulez-vous entrer en contact avec %1%?</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="13">
+        <source>ajout contact</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="14">
+        <source>Confirmer</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="15">
+        <source>Annuler</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="16">
+        <source>Ajouter une photo à '%1%'</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="17">
+        <source>Le formulaire contient des erreurs, veuillez vérifier !</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="18">
+        <source>Fichier *</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="19">
+        <source>Titre du fichier *</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="20">
+        <source>Télécharger</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="21">
+        <source>Modifier une ressource</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="22">
+        <source>Ajouter un document au projet '%1%'</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="23">
+        <source>Titre du document *</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="24">
+        <source>Source du document</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="25">
+        <source>Modifier</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="26">
+        <source>Acceptez-vous la demande de mise en relation de  &lt;br&gt; %1% ?</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="27">
+        <source>Accepter</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="28">
+        <source>Ignorer</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="29">
+        <source>Je déciderai plus tard</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="30">
+        <source>Souhaitez-vous vraiment supprimer %1% de vos contacts ?</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="31">
+        <source>suppression du contact</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="32">
+        <source>OUI</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="33">
+        <source>NON</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="34">
+        <source>Inviter des contacts au projet '%1%'</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="35">
+        <source>Inviter des acteurs à rejoindre RRR</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="36">
+        <source>Message personnel (facultatif)</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="37">
+        <source>envoi des invitations</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="38">
+        <source>Envoyer les invitations</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="39">
+        <source>Contribuer au </source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="40">
+        <source>Suivre les actualités du</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="41">
+        <source>Voulez-vous quitter le projet "%1%" ?</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="42">
+        <source>en cours</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="43">
+        <source>Connexion refusée, veuillez vérifier login et mot de passe</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="44">
+        <source>Login ou Mot de passe oublié ?</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="45">
+        <source>Nom d'utilisateur</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="46">
+        <source>Mot de passe</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="47">
+        <source>Connexion</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="48">
+        <source>OK! Si ces informations sont correctes, vous allez recevoir un email dans les secondes à venir !</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="49">
+        <source>Nom d'utilisateur ou email</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="50">
+        <source>Retrouver !</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="51">
+        <source>OK! Votre changement de mot de passe est effectué, vous pouvez dès à présent vous connecter avec votre nouveau mot de passe !</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="52">
+        <source>Votre email</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="53">
+        <source>Nouveau mot de passe</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="54">
+        <source>Retapez ce mot de passe</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="55">
+        <source>Répondre à %1%</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="56">
+        <source>Message privé à %1%</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="57">
+        <source>Destinataire</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="58">
+        <source>Sujet</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="59">
+        <source>Message *</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="60">
+        <source>Veuillez saisir votre message ci-dessus s'il vous plaît</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="61">
+        <source>envoi message</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="62">
+        <source>Envoyer</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="63">
+        <source> a commenté votre %type : '%title'</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="64">
+        <source>Supprimer ce commentaire ?</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="65">
+        <source>Bonjour %name</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="66">
+        <source>%person vient de faire un commentaire sur votre %type intitulé(e) "%title".</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="67">
+        <source>Pour répondre à ce commentaire, connectez vous sur : %urls</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="68">
+        <source>A bientôt sur le Réseau Rural Picardie</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="69">
+        <source>L'équipe RRR</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="70">
+        <source>commenter</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="71">
+        <source>retirer mon vote</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="72">
+        <source>voter pour</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="73">
+        <source>Bienvenue %1%</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="74">
+        <source> demandes</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="75">
+        <source> demande en attente</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="76">
+        <source> nouveaux messages</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="77">
+        <source> nouveau message</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="78">
+        <source>Actualités</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="79">
+        <source>Près de chez moi</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="80">
+        <source>tout le réseau</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="81">
+        <source>mes contacts</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="82">
+        <source>Vous n'avez pas encore de contacts, voici une suggestion de membres avec qui vous pourriez entrer en contact pour suivre leur actualité</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="83">
+        <source>le %date</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="84">
+        <source>Mon espace</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="85">
+        <source>Créer un groupe de travail</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="86">
+        <source>Créer un nouveau projet</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="87">
+        <source>Actualité</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="88">
+        <source>Mes projets</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="89">
+        <source>Groupes de travail</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="90">
+        <source>&lt;b&gt;fermer&lt;/b&gt; la présentation</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="91">
+        <source>Contribuez</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="92">
+        <source>Déclarez vos compétences que vous souhaitez mettre à disposition pour un projet précis, vous disposez ensuite d'une palette d'outils collaboratifs (publication de ressources, idées, etc.) pour contribuer en ligne sur le projet.</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="93">
+        <source>Présentation</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="94">
+        <source>Communication</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="95">
+        <source>Participation</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="96">
+        <source>Réseau d'Animation</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="97">
+        <source>Web &amp; Terrain</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="98">
+        <source>Capitalisation</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="99">
+        <source>Méthodologie</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="100">
+        <source>Editer</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="101">
+        <source>Toutes les structures</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="102">
+        <source>Mes structures</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="103">
+        <source>OK! Votre structure a été modifiée !</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="104">
+        <source>Veuillez télécharger une photo avant de définir la miniature</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="105">
+        <source>Photo de la structure</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="106">
+        <source>Nom de la structure</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="107">
+        <source>Adresse</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="108">
+        <source>Adresse 2</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="109">
+        <source>Ville</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="110">
+        <source>Code postal</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="111">
+        <source>Missions principales</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="112">
+        <source>But</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="113">
+        <source>Stratégie</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="114">
+        <source>Métiers, professions</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="115">
+        <source>Filières</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Thèmes</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="117">
+        <source>Compétences</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="118">
+        <source>Site web</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="119">
+        <source>OK! Votre miniature a bien été créée !</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="120">
+        <source>Présentation :</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="121">
+        <source>Missions principales :</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="122">
+        <source>But :</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="123">
+        <source>Stratégie :</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="124">
+        <source>Il n'y a pas de projet à rejoindre</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="125">
+        <source>Membres de l'entité</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="126">
+        <source>Vous n'avez pas rejoint ou créé une structure</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="127">
+        <source>Participer</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="128">
+        <source>Observer</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="129">
+        <source>%n participants</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="130">
+        <source>%n invités</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="131">
+        <source>Organisateur(s)</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="132">
+        <source>Participant(s)</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="133">
+        <source>voir tous les participants</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="134">
+        <source>L'événement se déroule à %place</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="135">
+        <source>événement public</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="136">
+        <source>événement privé</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="137">
+        <source> a changé le statut de votre suggestion '%title'</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="138">
+        <source>Etes-vous sûr de vouloir supprimer votre feedback ?</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="139">
+        <source>%person vient de modifier le statut de votre suggestion intitulée "%title" de &lt;b&gt;%stat1&lt;/b&gt; à &lt;b&gt;%stat2&lt;/b&gt;.</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="140">
+        <source>Pour consulter, connectez vous sur : %urls</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="141">
+        <source>Donner mon avis</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="142">
+        <source>Suggestions</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="143">
+        <source>Il n'y a pas encore d'avis sur RRR</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="144">
+        <source>Edition de votre feedback</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="145">
+        <source>Donner un nouvel avis sur RRR</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="146">
+        <source>OK! Votre feedback été modifié !</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="147">
+        <source>Statut (admin)</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="148">
+        <source>Titre</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="149">
+        <source>Un avis, un bug ?</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="150">
+        <source>Nouveau message</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="151">
+        <source>Messages reçus</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="152">
+        <source>Etes-vous sûr de vouloir supprimer ce message ?</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="153">
+        <source>reçu le</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>Vous n'avez aucun message</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="155">
+        <source>Messages envoyés</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="156">
+        <source>Le fait de supprimer un message ne le rend pas indisponible pour votre destinataire. Etes-vous sûr de vouloir supprimer ce message ?</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="157">
+        <source>envoyé le</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="158">
+        <source>Vous n'avez envoyé aucun message</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="159">
+        <source>Projets Plébiscités</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="160">
+        <source>à la recherche de financement</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="161">
+        <source>Ajouter &lt;b&gt;Votre Projet&lt;/b&gt;</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="162">
+        <source>Voir &lt;b&gt;tous les projets&lt;/b&gt;</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="163">
+        <source>Près de &lt;b&gt;chez Vous&lt;/b&gt;</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="164">
+        <source>Les Projets</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="165">
+        <source>A la Une</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="166">
+        <source>Mes Projets</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="167">
+        <source>Tous les Projets</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="168">
+        <source>est maintenant en contact avec</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="169">
+        <source>+ contact (en attente)</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="170">
+        <source>+ contact</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="171">
+        <source>+ message</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="172">
+        <source>Editer mon profil</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="173">
+        <source>c'est vous !</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="174">
+        <source>Répondre à la demande</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="175">
+        <source>Supprimer</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="176">
+        <source>Message</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="177">
+        <source>demande reçue le %1%</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="178">
+        <source> contacts</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="179">
+        <source> contact</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="180">
+        <source>Métiers</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="181">
+        <source>Présentation personnelle</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="182">
+        <source>Entités</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="183">
+        <source>Vous devez être en membre de RRR pour consulter le profil de %1%</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="184">
+        <source>Vous devez être en contact avec %1% pour consulter son profil.</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="185">
+        <source>Tous les membres</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="186">
+        <source>Contacts à confirmer</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="187">
+        <source>Contacts directs</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="188">
+        <source>Vous n'avez pas de contacts</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="189">
+        <source>Entrer en contact avec %name</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="190">
+        <source>Envoyer un message à %name</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="191">
+        <source>Acteur sur &lt;b&gt;%n&lt;/b&gt; projets</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="192">
+        <source>Observateur sur &lt;b&gt;%n&lt;/b&gt; projets</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="193">
+        <source>Référent dans %n projet(s)</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="194">
+        <source>Contributeur dans %n projet(s)</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="195">
+        <source>Observateur dans %n projet(s)</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="196">
+        <source>%name habite à %place</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="197">
+        <source>profil public</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="198">
+        <source>Bio</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="199">
+        <source>modifié le %date</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="200">
+        <source>Intérêts</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="201">
+        <source>%name a rejoint le projet</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="202">
+        <source>%name a publié le document &lt;u&gt;%doc_name&lt;/u&gt;</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="203">
+        <source>...</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="204">
+        <source>&lt;b&gt;%n&lt;/b&gt; Acteurs</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="205">
+        <source>&lt;b&gt;%n&lt;/b&gt; Observateurs</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="206">
+        <source>Référent(s)</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="207">
+        <source>Contributeur(s)</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="208">
+        <source>&gt; voir tous les Contributeurs</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="209">
+        <source>Géolocalisation</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="210">
+        <source>ce projet est implanté &lt;b&gt;%place&lt;/b&gt;</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="211">
+        <source>ce projet est à portée &lt;b&gt;%portee&lt;/b&gt;</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="212">
+        <source>Projets similaires</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="213">
+        <source>projet public</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="214">
+        <source> a ajouté une idée au projet %projet</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="215">
+        <source> a changé le statut de votre idée '%title'</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="216">
+        <source>Suivre</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="217">
+        <source>Contribuer</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="218">
+        <source>Contributeur</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="219">
+        <source>Observateur</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="220">
+        <source>Référent</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="221">
+        <source>Créateur</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="222">
+        <source>Quitter</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="223">
+        <source>Etes-vous sûr de vouloir supprimer votre idée ?</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="224">
+        <source>Publier une idée</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="225">
+        <source>Toutes les idées</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="226">
+        <source>Personne n'a publié d'idée. Soyez le premier en cliquant sur le bouton ci-dessus !</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="227">
+        <source>Exclure</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="228">
+        <source>%person vient de modifier le statut de votre idée intitulée "%title" de &lt;b&gt;%stat1&lt;/b&gt; à &lt;b&gt;%stat2&lt;/b&gt;.</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="229">
+        <source>%person vient d'ajouter une idée "%title" au projet %project.</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="230">
+        <source>Pour réagir dès maintenant à cette idée, connectez vous sur : %urls</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="231">
+        <source>a rejoint le projet</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="232">
+        <source>a publié le document %1%</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="233">
+        <source>Aucun suggestion possible!</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="234">
+        <source>Objectifs qualitatifs :</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="235">
+        <source>Objectifs quantitatifs :</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="236">
+        <source>Résultats obtenus :</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="237">
+        <source>Besoins :</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="238">
+        <source>Compétences recherchées :</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="239">
+        <source>Métiers concernés :</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="240">
+        <source>Tous les projets</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="241">
+        <source>Créer un projet</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="242">
+        <source>Vous ne participez à aucun projet</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="243">
+        <source>Edition de votre idée</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="244">
+        <source>Déposer une nouvelle idée</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="245">
+        <source>Status</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="246">
+        <source>Développez votre idée :</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="247">
+        <source>OK! Votre projet a été modifié !</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="248">
+        <source>OK! Votre projet a été créé !</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="249">
+        <source>Photo du projet</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="250">
+        <source>Intitulé du projet *</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="251">
+        <source>Commune</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="252">
+        <source>Champ d'application du projet</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="253">
+        <source>Organisation(s) référente(s) (facultatif)</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="254">
+        <source>Organisation(s) partenaire(s) (facultatif)</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="255">
+        <source>Date de début</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="256">
+        <source>Date d'échéance</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="257">
+        <source>Etat d'avancement</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="258">
+        <source>Leçons à retenir</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="259">
+        <source>Objectifs Qualitatifs</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="260">
+        <source>Objectifs Quantitatifs</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="261">
+        <source>Résultats obtenus</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="262">
+        <source>Besoins</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="263">
+        <source>Métiers recherchés</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="264">
+        <source>Les &lt;b&gt;filières&lt;/b&gt; (ex. Agriculture, Bois, Energie, Transport) que vous sélectionnez apparaissent ici, cliquez sur la croix </source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="265">
+        <source>Filières concernées</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="266">
+        <source>Les &lt;b&gt;thèmes&lt;/b&gt; sélectionnés apparaissent ici, cliquez sur la croix </source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="267">
+        <source>Thèmes concernés</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="268">
+        <source>Entrez ici les &lt;b&gt;compétences transversales&lt;/b&gt; (pas forcément liées à la filière) &lt;b&gt;du projet&lt;/b&gt;.</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="269">
+        <source>Compétences transversales recherchées</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="270">
+        <source>Etes-vous sûr de vouloir supprimer ce projet ?</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="271">
+        <source>Suggestions de projets</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="272">
+        <source>Ajouter une ressource</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="273">
+        <source>Source: %src</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="274">
+        <source>par %name | le %date</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="275">
+        <source>Télécharger une nouvelle ressource</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="276">
+        <source>Garder le fichier actuel</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="277">
+        <source>Acteurs du réseau</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="278">
+        <source>Nouveaux membres (..)</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="279">
+        <source>Suggestion de contact</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="280">
+        <source>Rejoindre des projets</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="281">
+        <source>Contacts (..)</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="282">
+        <source>Localisation</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="283">
+        <source>Actions</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="284">
+        <source>Ajouter une photo</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="285">
+        <source>Ajouter une idée</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="286">
+        <source>Inviter des acteurs</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="287">
+        <source>Modifier la fiche projet</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="288">
+        <source>Acteurs du projet</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="289">
+        <source>Référents (..)</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="290">
+        <source>tous les référents du projet</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="291">
+        <source>Membres (..)</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="292">
+        <source>tous les membres du projet</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="293">
+        <source>Structures (..)</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="294">
+        <source>toutes les structures du projet</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="295">
+        <source>Idées / Contribtions</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="296">
+        <source>Il y a</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="297">
+        <source> idées</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="298">
+        <source>idée</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="299">
+        <source>Projets connexes</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="300">
+        <source>Nouveaux projets (..)</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="301">
+        <source>tous les membres de l'entité</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="302">
+        <source>Actuellement sur le réseau</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="303">
+        <source>Mon Compte</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="304">
+        <source>Mon Profil</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="305">
+        <source>Ma Structure</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="306">
+        <source>voir mon profil</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="307">
+        <source>Edition de votre profil</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="308">
+        <source>Infos perso</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="309">
+        <source>Confidentialité</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="310">
+        <source>Structure(s)</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="311">
+        <source>Photo</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="312">
+        <source>Miniature</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="313">
+        <source>Notifications</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="314">
+        <source>Photo de profil</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="315">
+        <source>Créer mon compte</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="316">
+        <source>OK! Vos nouvelles options sont effectives !</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="317">
+        <source>Lorsque quelqu'un commente l'une de mes publications</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="318">
+        <source>Lorsque quelqu'un publie un idée, un document sur un de mes projets</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="319">
+        <source>OK! Vos nouvelles options de confidentialité sont effectives !</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="320">
+        <source>Qui peut voir mon profil</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="321">
+        <source>OK! Les informations sont bien enregistrées !</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="322">
+        <source>Vous avez été relié à une ou plusieurs structures automatiquement !</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="323">
+        <source>Prénom</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="324">
+        <source>Nom</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="325">
+        <source>vous pourrez choisir d'autres e-mails pour vos notifications</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="326">
+        <source>Email</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="327">
+        <source>&lt;b&gt;On désigne par "filière" votre environnement professionnel générique, ne mettez pas d'expressions trop spécifiques qui correspondent à un thème.&lt;/b&gt;&lt;br&gt;&lt;br&gt; Tapez-ici, une par une, les filières dans lesquelles vous êtes impliqué, que ce soit à titre professionnel, personnel ou associatif. Vous pouvez renseigner jusqu’à 3 filières. Lorsque vous commencez à taper la filière, vous verrez des suggestions s'afficher, sélectionnez celle qui correspond à votre souhait. Vous pourrez à tout moment modifier vos filières en vous rendant dans « mon profil ».  &lt;br&gt;&lt;br&gt;&lt;i&gt;Exemples de filières : Avicole, Agricole, Bois, Energie, Social, Education, etc.&lt;/i&gt;</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="328">
+        <source>&lt;b&gt;Les Thèmes sont des mots-clés ou expressions-clés spécifiques à une filière&lt;/b&gt; (&lt;i&gt;exemple : transformation bois&lt;/i&gt;) &lt;b&gt;ou transversaux&lt;/b&gt; (&lt;i&gt;exemple : développement rural, filières courtes&lt;/i&gt;). &lt;br&gt;&lt;br&gt;Un grand choix de thèmes à déjà été référencé dans l’outil Internet RRR grâce aux informations collectées lors de la phase d’enquête menée auprès des acteurs du monde rural en Picardie.  Les thèmes référencés s’afficheront en tant que suggestion pendant que vous commencez à taper une expression. Afin d’assurer l’efficacité de l’outil, vous êtes invité à sélectionner la suggestion la plus adaptée dans le menu déroulant. Évitez de reformuler une expression déjà suggérée. Vous pourrez à tout moment modifier vos thèmes en vous rendant dans « mon profil ». &lt;br&gt;&lt;br&gt;&lt;i&gt;Exemples de thèmes : développement économique, emploi, reprise d’entreprise, traditions rurales, veille territoriale, urbanisme, handicap, éducation agricole, cohésion sociale, études et évaluations, filières courtes, transformation bois, etc.&lt;/i&gt;</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="329">
+        <source>&lt;b&gt;Une compétence est un savoir-faire qui peut être très spécifique ou transversal.&lt;/b&gt;&lt;br&gt;&lt;br&gt;Vous pouvez saisir jusqu’à 20 compétences que vous souhaitez mettre en avant sur votre profil, que vous souhaitez partager ou valoriser en tant qu'acteur du Réseau Rural Régional. Ces compétences peuvent être très spécifiques ou transversales.&lt;br&gt;&lt;br&gt;&lt;i&gt;Exemple de compétences spécifiques : création de sites internet&lt;/i&gt;&lt;br&gt;&lt;i&gt;Exemple de compétences transversales : gestion de projet, animation de réseau, marketing, management&lt;/i&gt;</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="330">
+        <source>OK! Vos structures sont enregistrées !</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="331">
+        <source>Entrez ici les organisations que vous représentez ou dont vous faites partie (collectivité, société, association, syndicat professionnel, etc.)</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="332">
+        <source>Ma ou mes structure(s)</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="333">
+        <source>Bonjour %fullname !</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="334">
+        <source>Nous vous remercions pour votre inscription !</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="335">
+        <source>Voici un rappel de vos identifiants au cas où vous les perdriez</source>
+        <target/>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,2 @@
+<?php $idea = Doctrine_Query::create()->from("ProjetIdee")->where("id=?", $item["extraData"]["object_id"])->fetchOne(array(), Doctrine::HYDRATE_ARRAY); ?>
+<h3><?php echo __("<a href='%url'>%name</a> a lancé la discussion '%disc'", array( "%url" => $item["url"], "%disc" => $idea["titre"], "%name" => $item["full_name"])); ?></h3>

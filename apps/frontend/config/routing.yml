@@ -1,0 +1,326 @@
+#   wTerritoires <http://www.wterritoires.fr/>
+#   Copyright (C) 2011 Simon Lamellière <opensource@worketer.fr>
+#
+#   This program is free software: you can redistribute it and/or modify
+#   it under the terms of the GNU Affero General Public License as
+#   published by the Free Software Foundation, either version 3 of the
+#   License, or (at your option) any later version.
+
+homepage:
+  url:   /
+  param: { module: default, proute: news, action: index }
+  
+ajax_metier:
+  url:   /ajax/metier
+  param: { module: ajax, action: metier }
+
+set_structure_image:
+  url:   /entite/image/:id
+  param: { module: entitie, action: image }
+  
+save_structure_image:
+  url:   /entite/thumb/:id
+  param: { module: entitie, action: thumb }
+  
+legal:
+  url:   /mentions-legales.htm
+  param: { module: welcome, action: legal }
+
+directory_index:
+  url:   /directory/all/:type
+  param: { module: referentiel, action: home }
+
+directory_act:
+  url:   /directory/:type/:slug/:proute
+  param: { module: referentiel, action: index }
+
+directory:
+  url:   /directory/:type/:slug
+  param: { module: referentiel, action: index, proute: project }
+  
+myspace: 
+  url:   /home/:proute
+  param  { module: default, action: index }
+
+dasha:
+  url:   /dashboard
+  param: { module: dashboard, proute: mailings, action: index }
+
+sendmail:
+  url:   /dashboard/send
+  param: { module: dashboard, action: send }
+
+mailing:
+  url:   /dashboard/mailing
+  param: { module: dashboard, proute: mailing, action: mailing }
+  
+dashedit:
+  url:   /dashboard/edit
+  param: { module: dashboard, proute: edit, action: edit }
+
+dashremovemailing:
+  url:   /dashboard/remove_mailing
+  param: { module: dashboard, proute: remove, action: remove_mailing }
+
+
+dashremove:
+  url:   /dashboard/remove
+  param: { module: dashboard, proute: remove, action: remove }
+
+dashc:
+  url:   /dashboard/:proute/*
+  param: { module: dashboard, action: index }
+
+invitations:
+  url:   /invitations
+  param: { module: default, action: invitations }
+  
+cgu:
+  url:   /cgu.htm
+  param: { module: welcome, action: cgu }
+
+set_projet_image:
+  url:   /projet/image/:id
+  param: { module: projet, action: image }
+  
+save_projet_image:
+  url:   /projet/thumb/:id
+  param: { module: projet, action: thumb }
+
+inbox:
+  url:   /inbox
+  param: { module: inbox, proute: in, action: index }
+
+inboxs:
+  url:   /inbox/send/*
+  param: { module: inbox, action: send }
+
+inboxrmv:
+  url:   /inbox/remove/*
+  param: { module: inbox, action: remove }
+  
+inboxr:
+  url:   /inbox/read/*
+  param: { module: inbox, action: read }
+
+inboxc:
+  url:   /inbox/:proute/*
+  param: { module: inbox, action: index }
+
+projects:
+  url:   /projects
+  param: { module: project, action: all }
+
+projectspage:
+  url:   /projects/:action
+  param: { module: project }
+  
+projets:
+  url:   /projet/list
+  param: { module: projet, action: list }
+  
+mesprojets:
+  url:   /projet/mesprojets
+  param: { module: projet, action: mesprojets }
+  
+profile_edit:
+  url:   /profil/edit/:step
+  param: { module: subscribe, action: dispatch }
+  
+profile_edit_home:
+  url:   /profil/edit
+  param: { module: subscribe, action: dispatch }
+  
+network:
+  url:   /profil/network/contacts
+  param: { module: profil, action: network }
+  
+networkwait:
+  url:   /profil/network/waiting
+  param: { module: profil, action: netwait }
+
+networkall:
+  url:   /profil/network/all
+  param: { module: profil, action: netall }
+  
+profileedit:
+  url:   /profile/edit/:proute/*
+  param: { module: profile, action: edit }
+  
+profile:
+  url:   /profil/:login
+  param: { module: profil, action: index }
+
+public_profile:
+  url:   /profile/:slug
+  param: { module: profile, action: index }
+    
+projet_suggest:
+  url:   /projet/suggest
+  param: { module: projet, action: suggest }
+  
+projet_new:
+  url:   /projet/new
+  param: { module: projet, action: new }
+  
+projet_edit:
+  url:   /projet/edit/:id
+  param: { module: projet, action: edit }
+  
+projet_idea:
+  url:   /projet/:slug/ideas
+  param: { module: projet, action: ideas }
+  
+projet_new_idea:
+  url:   /projet/:slug/new_idea
+  param: { module: projet, action: newidea }
+  
+projet_edit_idea:
+  url:   /projet/:slug/edit_idea/:id
+  param: { module: projet, action: newidea }
+  
+projet_delete_idea:
+  url:   /projet/:slug/delete_idea/:id
+  param: { module: projet, action: deleteidea }
+  
+projet:
+  url:   /projet/:slug
+  param: { module: projet, action: index }
+
+eventedits:
+  url:   /event/edit
+  param: { module: event, action: edit }
+  
+eventedit:
+  url:   /event/edit/:id
+  param: { module: event, action: edit }
+
+event:
+  url:   /event/:slug
+  param: { module: event, proute: activity, action: index }
+
+annonce:
+  url:   /annonce/:slug
+  param: { module: annonce, action: index }
+
+groupadd:
+  url:   /group/edit
+  param: { module: project, type: group, action: edit }
+  
+groupedit:
+  url:   /group/edit/:id
+  param: { module: project, type: group, action: edit }
+
+projectadd:
+  url:  /project/edit
+  param: { module: project, type: public, action: edit }
+  
+projectaddphoto:
+  url:  /project/add_photo
+  param: { module: project, action: add_photo }
+  
+projectedit:
+  url:   /project/edit/:id
+  param: { module: project, type: public, action: edit }
+
+project:
+  url:   /project/:slug
+  param: { module: project, proute: index, action: index }
+  
+project_act:
+  url:   /project/:proute/:slug
+  param: { module: project, action: index }
+
+event_act:
+  url:   /event/:proute/:slug
+  param: { module: event, action: index }
+
+event_page:
+  url:   /events/:proute
+  param: { module: event, action: all }
+    
+profilex:
+  url:   /profile/:slug
+  param: { module: profile, action: index }
+
+search_simple:
+  url:   /search/:action/q/:q
+  param: { module: search, action: :action }
+  
+search:
+  url:   /search
+  param: { module: search, proute: project, action: index }
+
+search_page:
+  url:   /search/:proute/*
+  param: { module: search, action: index }
+
+structuress:
+  url:   /entite
+  param: { module: entitie, action: index }
+  
+structure_new:
+  url:   /entite/new
+  param: { module: entitie, action: new }
+
+structure_new2:
+  url:   /structure/edit
+  param: { module: structure, action: edit }
+
+structure2:
+  url:   /structure/:slug
+  param: { module: structure, action: index }
+
+structure2m:
+  url:   /structure/:slug/members/*
+  param: { module: structure, action: members }
+  
+structure2c:
+  url:   /structure/:slug/contacts/*
+  param: { module: structure, action: contacts }
+  
+structure2v:
+  url:   /structure/:slug/edit_contact/*
+  param: { module: structure, action: edit_contact }
+  
+structure_list:
+  url:   /entite/list
+  param: { module: entitie, action: list }
+
+structure_my:
+  url:   /entite/mesentites
+  param: { module: entitie, action: mesentites }
+  
+structure_list_page:
+  url:   /entite/list/page/:page
+  param: { module: entitie, action: list }
+  
+structure_edit:
+  url:   /entite/edit/:id
+  param: { module: entitie, action: edit }
+  
+structure:
+  url:   /entite/:slug
+  param: { module: entitie, action: index }
+  
+structure_membres:
+  url:   /entite/:slug/membres
+  param: { module: entitie, action: membres }
+  
+projet_membres:
+  url:   /projet/:slug/membres
+  param: { module: projet, action: membres }
+  
+projet_structures:
+  url:   /projet/:slug/structures
+  param: { module: projet, action: structures }
+
+  
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

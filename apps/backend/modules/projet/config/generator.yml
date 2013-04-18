@@ -1,0 +1,25 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Projet
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          projet
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        tags: { type: admin_double_list, params: through_class=Tagging }
+      list:
+        title:         Liste des projets
+        display: [Nom]
+      filter:
+        display: [nom, createur_id, action]
+      form:    ~
+      edit:    ~
+      new:     ~

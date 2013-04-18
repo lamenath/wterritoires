@@ -1,0 +1,14 @@
+menus:
+  search:
+    use_proute: true
+    transport_search: true
+    sf_route: 
+      name: "@search_page"
+      params: 
+        slug: slug
+    tree:
+      project: Projets
+      event: Evénements
+      members: Membres
+      ressources: Ressources
+      structures: Structures

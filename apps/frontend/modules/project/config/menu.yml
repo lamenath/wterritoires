@@ -1,0 +1,23 @@
+menus:
+  project_page:
+    sf_route: 
+      name: "@projectspage"
+      params: []
+    tree:
+      all: A la une
+      mine: Mes Projets
+      suggestions: Suggestions
+      list: Tous les Projets
+  project_profile:
+    use_proute: true
+    use_display: mini
+    sf_route: 
+      name: "@project_act"
+      params: 
+        slug: slug
+    tree:
+      index: Activité
+      presentation: Présentation
+      members: Membres ({%count_total})
+      ressources: Ressources ({%count_ressources})
+      ideas: Forum ({%count_ideas})

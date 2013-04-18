@@ -1,0 +1,21 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/13-View
+
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    #title:        symfony project
+    #description:  symfony project
+    #keywords:     symfony, project
+    #language:     en
+    #robots:       index, follow
+
+  stylesheets:    [main.css, tipsy.css, ui-lightness/jquery-ui-1.8.16.custom.css]
+
+  javascripts:    [jquery.js, jquery-ui-1.8.16.custom.min.js, jscroll.js, pack.scrollbars.js, jquery.elastic.source.js, tiny_mce/jquery.tinymce.js, jquery.tipsy.js, new.js]
+
+  has_layout:     true
+  layout:         layout
+ 

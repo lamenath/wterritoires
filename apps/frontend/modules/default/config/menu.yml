@@ -1,0 +1,12 @@
+menus:
+  myspace:
+    use_proute: true
+    sf_route: 
+      name: "@myspace"
+      params: []
+    tree:
+      news: Actualités
+      map: Près de chez moi
+      contacts: Mes contacts
+      structures: Mes structures
+      invitations: Invitations
