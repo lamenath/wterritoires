@@ -20,8 +20,6 @@ abstract class BaseCompetenceFormFilter extends BaseFormFilterDoctrine
       'updated_at'     => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
       'slug'           => new sfWidgetFormFilterInput(),
       'profil_list'    => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Profil')),
-      'segment_list'   => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Segment')),
-      'annonce_list'   => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Annonce')),
       'event_list'     => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Event')),
       'structure_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Structure')),
       'projet_list'    => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Projet')),
@@ -35,8 +33,6 @@ abstract class BaseCompetenceFormFilter extends BaseFormFilterDoctrine
       'updated_at'     => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
       'slug'           => new sfValidatorPass(array('required' => false)),
       'profil_list'    => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Profil', 'required' => false)),
-      'segment_list'   => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Segment', 'required' => false)),
-      'annonce_list'   => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Annonce', 'required' => false)),
       'event_list'     => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Event', 'required' => false)),
       'structure_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Structure', 'required' => false)),
       'projet_list'    => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Projet', 'required' => false)),
@@ -66,42 +62,6 @@ abstract class BaseCompetenceFormFilter extends BaseFormFilterDoctrine
     $query
       ->leftJoin($query->getRootAlias().'.ProfilCompetence ProfilCompetence')
       ->andWhereIn('ProfilCompetence.profil_id', $values)
-    ;
-  }
-
-  public function addSegmentListColumnQuery(Doctrine_Query $query, $field, $values)
-  {
-    if (!is_array($values))
-    {
-      $values = array($values);
-    }
-
-    if (!count($values))
-    {
-      return;
-    }
-
-    $query
-      ->leftJoin($query->getRootAlias().'.SegmentCompetence SegmentCompetence')
-      ->andWhereIn('SegmentCompetence.segment_id', $values)
-    ;
-  }
-
-  public function addAnnonceListColumnQuery(Doctrine_Query $query, $field, $values)
-  {
-    if (!is_array($values))
-    {
-      $values = array($values);
-    }
-
-    if (!count($values))
-    {
-      return;
-    }
-
-    $query
-      ->leftJoin($query->getRootAlias().'.AnnonceCompetence AnnonceCompetence')
-      ->andWhereIn('AnnonceCompetence.annonce_id', $values)
     ;
   }
 
@@ -175,8 +135,6 @@ abstract class BaseCompetenceFormFilter extends BaseFormFilterDoctrine
       'updated_at'     => 'Date',
       'slug'           => 'Text',
       'profil_list'    => 'ManyKey',
-      'segment_list'   => 'ManyKey',
-      'annonce_list'   => 'ManyKey',
       'event_list'     => 'ManyKey',
       'structure_list' => 'ManyKey',
       'projet_list'    => 'ManyKey',

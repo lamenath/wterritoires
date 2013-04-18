@@ -21,8 +21,6 @@ abstract class BaseFiliereFormFilter extends BaseFormFilterDoctrine
       'slug'           => new sfWidgetFormFilterInput(),
       'profil_list'    => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Profil')),
       'mailing_list'   => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Mailing')),
-      'segment_list'   => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Segment')),
-      'annonce_list'   => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Annonce')),
       'ressource_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Ressource')),
       'event_list'     => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Event')),
       'structure_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Structure')),
@@ -38,8 +36,6 @@ abstract class BaseFiliereFormFilter extends BaseFormFilterDoctrine
       'slug'           => new sfValidatorPass(array('required' => false)),
       'profil_list'    => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Profil', 'required' => false)),
       'mailing_list'   => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Mailing', 'required' => false)),
-      'segment_list'   => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Segment', 'required' => false)),
-      'annonce_list'   => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Annonce', 'required' => false)),
       'ressource_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Ressource', 'required' => false)),
       'event_list'     => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Event', 'required' => false)),
       'structure_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Structure', 'required' => false)),
@@ -88,42 +84,6 @@ abstract class BaseFiliereFormFilter extends BaseFormFilterDoctrine
     $query
       ->leftJoin($query->getRootAlias().'.MailingFiliere MailingFiliere')
       ->andWhereIn('MailingFiliere.mailing_id', $values)
-    ;
-  }
-
-  public function addSegmentListColumnQuery(Doctrine_Query $query, $field, $values)
-  {
-    if (!is_array($values))
-    {
-      $values = array($values);
-    }
-
-    if (!count($values))
-    {
-      return;
-    }
-
-    $query
-      ->leftJoin($query->getRootAlias().'.SegmentFiliere SegmentFiliere')
-      ->andWhereIn('SegmentFiliere.segment_id', $values)
-    ;
-  }
-
-  public function addAnnonceListColumnQuery(Doctrine_Query $query, $field, $values)
-  {
-    if (!is_array($values))
-    {
-      $values = array($values);
-    }
-
-    if (!count($values))
-    {
-      return;
-    }
-
-    $query
-      ->leftJoin($query->getRootAlias().'.AnnonceFiliere AnnonceFiliere')
-      ->andWhereIn('AnnonceFiliere.annonce_id', $values)
     ;
   }
 
@@ -216,8 +176,6 @@ abstract class BaseFiliereFormFilter extends BaseFormFilterDoctrine
       'slug'           => 'Text',
       'profil_list'    => 'ManyKey',
       'mailing_list'   => 'ManyKey',
-      'segment_list'   => 'ManyKey',
-      'annonce_list'   => 'ManyKey',
       'ressource_list' => 'ManyKey',
       'event_list'     => 'ManyKey',
       'structure_list' => 'ManyKey',

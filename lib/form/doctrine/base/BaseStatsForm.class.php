@@ -1,36 +1,36 @@
 <?php
 
 /**
- * AnnonceTheme form base class.
+ * Stats form base class.
  *
- * @method AnnonceTheme getObject() Returns the current form's model object
+ * @method Stats getObject() Returns the current form's model object
  *
  * @package    rrr
  * @subpackage form
  * @author     Your name here
  * @version    SVN: $Id: sfDoctrineFormGeneratedTemplate.php 29553 2010-05-20 14:33:00Z Kris.Wallsmith $
  */
-abstract class BaseAnnonceThemeForm extends BaseFormDoctrine
+abstract class BaseStatsForm extends BaseFormDoctrine
 {
   public function setup()
   {
     $this->setWidgets(array(
       'id'         => new sfWidgetFormInputHidden(),
-      'annonce_id' => new sfWidgetFormInputHidden(),
-      'theme_id'   => new sfWidgetFormInputHidden(),
+      'type'       => new sfWidgetFormInputText(),
+      'total'      => new sfWidgetFormInputText(),
       'created_at' => new sfWidgetFormDateTime(),
       'updated_at' => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(
       'id'         => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'annonce_id' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('annonce_id')), 'empty_value' => $this->getObject()->get('annonce_id'), 'required' => false)),
-      'theme_id'   => new sfValidatorChoice(array('choices' => array($this->getObject()->get('theme_id')), 'empty_value' => $this->getObject()->get('theme_id'), 'required' => false)),
+      'type'       => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'total'      => new sfValidatorInteger(array('required' => false)),
       'created_at' => new sfValidatorDateTime(),
       'updated_at' => new sfValidatorDateTime(),
     ));
 
-    $this->widgetSchema->setNameFormat('annonce_theme[%s]');
+    $this->widgetSchema->setNameFormat('stats[%s]');
 
     $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
 
@@ -41,7 +41,7 @@ abstract class BaseAnnonceThemeForm extends BaseFormDoctrine
 
   public function getModelName()
   {
-    return 'AnnonceTheme';
+    return 'Stats';
   }
 
 }
